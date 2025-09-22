@@ -24,7 +24,7 @@ const Login = () => {
      //const email= form.get('email')
      //const password= form.get('password')
 
-     const res= await signIn('Credentials', {
+     await signIn('Credentials', {
         redirect: true,
         email,
         password
