@@ -11,7 +11,6 @@ const Login = () => {
     const formUrl= searchParams.get('code') //if NextAuth redirects back with an error (?error=CredentialsSignin), we can read it here.
    console.log(formUrl)
 
-    //const [formError, setformError]= useState('')
     const [loading, setLoading]= useState(false)
     const [email, setEmail]= useState('')
     const [password, setPassword]= useState('')
@@ -19,7 +18,6 @@ const Login = () => {
     
    const handleClick =async (e: React.FormEvent)=>{
      e.preventDefault()
-     setformError('')
      setLoading(true)
 
      //const form= new FormData(e.currentTarget as HTMLFormElement); /*When you submit a form in React, the event (e) has a property called currentTarget is the form element itself (the <form> you submitted)  new formrmData(...) → creates a special object that holds all the input values from that form. */
