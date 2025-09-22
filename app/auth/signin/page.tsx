@@ -2,9 +2,8 @@
 
 import { signIn } from "next-auth/react"
 import { useSearchParams } from "next/navigation"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { AlertCircle } from "lucide-react";
-import { useRouter } from "next/navigation";
 
 
 const Login = () => {
@@ -12,8 +11,7 @@ const Login = () => {
     const formUrl= searchParams.get('code') //if NextAuth redirects back with an error (?error=CredentialsSignin), we can read it here.
    console.log(formUrl)
 
-    const router= useRouter()
-    const [formError, setformError]= useState('')
+    //const [formError, setformError]= useState('')
     const [loading, setLoading]= useState(false)
     const [email, setEmail]= useState('')
     const [password, setPassword]= useState('')
