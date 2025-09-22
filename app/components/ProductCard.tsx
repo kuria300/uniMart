@@ -1,12 +1,12 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import { useAppContext } from '../context/Appcontext'
 import Image from 'next/image'
 import { Product } from '../context/Appcontext'
 
 
 const ProductCard = ({product}: {product: Product}) => {
-  const {currency, router,products, addToCart} = useAppContext()
+  const {currency, router} = useAppContext()
   return (
   <div onClick={()=>router.push('/product/'+ product._id)}className='flex flex-col gap-1 items-start max-w-[170px] w-full cursor-pointer'>
     <div className='relative group bg-gray-500/10 h-52 rounded-lg flex items-center justify-center cursor-pointer'>

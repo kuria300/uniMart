@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
-import { AppContext, AppContextProvisder } from "./context/Appcontext";
+import { AppContextProvisder } from "./context/Appcontext";
 import { Poppins } from "next/font/google";
 import { ToastContainer } from "react-toastify";
-import { ClerkProvider } from "@clerk/nextjs";
 
 const outfit = Poppins({
   variable: "--font-poppins",

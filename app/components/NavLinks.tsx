@@ -5,7 +5,7 @@ import gsap from "gsap"
 import ScrollToPlugin from "gsap/ScrollToPlugin"
 import { useEffect } from "react"
 
-const page =() => {
+const Page =() => {
  const router= useRouter()
   const pathname = usePathname();
 
@@ -47,4 +47,4 @@ if(sessionStorage.getItem('scroll')=== 'true'){
   )
 }
 
-export default page
+export default Page

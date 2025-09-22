@@ -1,4 +1,3 @@
-import { Work_Sans } from 'next/font/google' //next.js built in google font api
 import React from 'react'
 
 const Footer = () => {

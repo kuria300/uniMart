@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { assets } from '@/assets/assets'
 import { useAppContext } from '../context/Appcontext'
 
-const page = () => {
+const Page = () => {
 
     const {router}= useAppContext()
     useEffect(()=>{
@@ -23,4 +23,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

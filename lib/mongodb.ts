@@ -6,7 +6,12 @@ if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable inside .env.local');
 }
 
-let cached= (global as any).mongoose || {conn: null, promise: null} 
+const cached = (global as typeof global & {
+  mongoose?: {
+    conn: typeof import('mongoose') | null;
+    promise: Promise<typeof import('mongoose')> | null;
+  };
+}).mongoose || { conn: null, promise: null };
 //checks if its in global a mongodb connection if not create new object n store
 
 async function dbConnect(){

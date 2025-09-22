@@ -6,7 +6,7 @@ import { useSession } from 'next-auth/react'
 import Ordersummary from './Ordersummary'
 
 const Carts = () => {
-    const { data: session, status } = useSession();
+    const { data: session} = useSession();
     const {products, router, cartItems, addToCart, updateCartQuantity,getCartCount, currency}= useAppContext()
   return (
    <div className='flex flex-col md:flex-row items-center justify-center py-14 px-6 md:px-12 lg:px-32  gap-10'>

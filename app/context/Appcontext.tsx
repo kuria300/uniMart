@@ -23,7 +23,7 @@ export interface User {
     name: string;
     email: string;
     imageUrl: string;
-    cartItems: {};
+    cartItems:  Record<string, number>;
     __v: number;
 }
 export interface Address {
@@ -85,7 +85,6 @@ export const AppContextProvisder = ({ children }: { children: ReactNode }) => {
  localStorage.setItem('selectedAddress', JSON.stringify(address))
  } // updates the React State selectedAddress and in cart page it uses the new state thus appears auto-selected without useEffcet
 
- const order= ()=>{}
     const fetchDummyData = async()=>{
         setProducts(productsDummyData)
     }
@@ -121,7 +120,7 @@ export const AppContextProvisder = ({ children }: { children: ReactNode }) => {
 
     const getCartCount= ()=>{
       let totalCount=0;
-      let ItemsIds= Object.keys(cartItems)//grab cartItems IDs
+      const ItemsIds= Object.keys(cartItems)//grab cartItems IDs
 
       for(let i=0; i<ItemsIds.length; i++){
         const itemsId= ItemsIds[i] //get the Ids
@@ -136,14 +135,14 @@ export const AppContextProvisder = ({ children }: { children: ReactNode }) => {
 
     const getCartAmount= ()=>{
        let totalAmount=0;
-      let ItemsIds= Object.keys(cartItems)//grab cartItems IDs
+      const ItemsIds= Object.keys(cartItems)//grab cartItems IDs
 
       for(let i=0; i<ItemsIds.length; i++){
        const itemsId= ItemsIds[i]
        const itemInfo= products.find((products)=>products._id=== itemsId)
        
-       if(cartItems[itemsId] > 0){
-         totalAmount+= itemInfo?.offerPrice! * cartItems[itemsId]
+       if(cartItems[itemsId] > 0 && itemInfo?.offerPrice){
+         totalAmount+= itemInfo.offerPrice * cartItems[itemsId]
        }
       }
       return parseFloat(totalAmount.toFixed(2))

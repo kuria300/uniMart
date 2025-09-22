@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import { useAppContext } from '../context/Appcontext'
 import { addressDummyData } from '@/assets/assets' 
 import { useSession } from 'next-auth/react';
@@ -100,7 +100,7 @@ const Ordersummary = () => {
     toast.error(data.error || "Failed to place order.", {position:'top-center'});
   }
     }catch(err){
-       toast.error("Something went wrong!", {position:'top-center'});
+       toast.error(String(err), {position:'top-center'});
     }
   
     }

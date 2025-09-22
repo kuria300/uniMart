@@ -2,12 +2,11 @@
 import React, { useEffect, useState } from 'react'
 import { Product, useAppContext } from '@/app/context/Appcontext'
 import Image from 'next/image'
-import { assets } from '@/assets/assets'
 import { useParams } from 'next/navigation'
 import { toast } from 'react-toastify'
 
 
-const page = () => {
+const Page = () => {
   const {products, currency, router, addToCart} = useAppContext();
   const { id }= useParams();
 
@@ -129,4 +128,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

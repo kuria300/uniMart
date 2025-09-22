@@ -3,10 +3,9 @@ import React, { FormEvent,useState } from 'react'
 import { useAppContext } from '../context/Appcontext'
 import Image from 'next/image'
 import { assets } from '@/assets/assets'
-import { addressDummyData } from '@/assets/assets' 
 
 const Addaddress = () => {
-    const {router, userData, dummyAddress, setdummyAddress, selectedAddress, setSelectedAddress, handleSelect}= useAppContext()
+    const {router, userData, dummyAddress, setdummyAddress, handleSelect}= useAppContext()
 
     type addressDummyData ={
       _id: string;

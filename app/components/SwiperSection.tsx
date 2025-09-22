@@ -54,7 +54,7 @@ const SwiperSection = () => {
     <>
        <Swiper loop={true} spaceBetween={20} slidesPerView={1} pagination={{clickable: true}} modules={[Pagination]} className="!pb-10">
          {sliderData.map((item)=>(
-            <SwiperSlide>
+            <SwiperSlide key={item.id}>
             <div className="flex flex-col-reverse md:flex-row items-center gap-4 bg-gray-200 shadow-lg min-h-[200px] max-w-6xl mx-4 md:mx-auto mt-8 rounded-xl p-6">
             <div className='flex flex-col space-y-3 w-full p-6'>
              <p className="md:text-base md:text-start text-orange-600">{item.offer}</p>
