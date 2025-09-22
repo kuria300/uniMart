@@ -30,7 +30,6 @@ const Login = () => {
         password
      })
 
-     console.log("Full signIn response:", res);
 
     setLoading(false);
 
